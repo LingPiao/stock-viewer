@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Stock Viewer"
+            id="StockViewer">
+      </category>
+      <view
+            name="Stock Viewer"
+            icon="icons/stockViewer.gif"
+            category="StockViewer"
+            class="stockviewer.views.StockViewer"
+            id="stockviewer.views.StockViewer">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.TaskList"
+               relationship="right"
+               id="stockviewer.views.StockViewer">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+      		category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage"
+            class="stockviewer.preferences.StockViewerPreferencePage"
+            id="stockviewer.preferences.StockViewerPreferencePage"
+            name="StockViewer">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="stockviewer.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="StockViewer.actionSet1"
+            label="label">
+      </actionSet>
+   </extension>
+
+</plugin>
