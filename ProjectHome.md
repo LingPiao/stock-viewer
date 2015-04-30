@@ -1,0 +1,1 @@
+StockViewer根据新浪提供的接口，提供了简单、方便、快捷的股票查询方式并以Plug-in的方式集成在Eclipse平台上。
